@@ -3,8 +3,8 @@ import icon from '../../asset/img/index.png'
 class Home extends Component {
     render() {
       return  (
-       		<div className="banner">
-       			<img src={icon} alt="" />
+               <div className="banner">
+               render Home component
        		</div>
         )
     }

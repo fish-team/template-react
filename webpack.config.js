@@ -47,7 +47,7 @@ module.exports = function(env) {
                 test: /\.(js|jsx)?$/,
                 use: [{
                     loader: 'babel-loader',
-                }]
+                }],
             }]
         },
         plugins: [
