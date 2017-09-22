@@ -44,10 +44,11 @@ module.exports = function(env) {
                     }
                 }
             }, {
+                exclude: /(node_modules|bower_components)/,
                 test: /\.(js|jsx)?$/,
                 use: [{
                     loader: 'babel-loader',
-                }],
+                }]
             }]
         },
         plugins: [
