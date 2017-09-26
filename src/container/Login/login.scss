@@ -1,0 +1,29 @@
+$bgColor: '#ebebeb';
+.login-page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: $bgColor;
+    .form-wrap {
+        position: relative;
+        top: 50%;
+        margin-top: -224px;
+        width: 100%;
+        p {
+            text-align: center;
+            font-size: 24px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+    }
+    .form-login {
+        width: 24%;
+        background-color: #fff;
+        padding: 2%;
+        border-radius: 5px;
+        margin: 0 auto;
+    }
+    .form-btn {
+        width: 100%;
+    }
+}
