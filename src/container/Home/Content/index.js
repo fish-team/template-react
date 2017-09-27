@@ -13,7 +13,7 @@ const {Content} = Layout
 
 export default function(){
     return (
-        <Content>
+        <Content style={{margin: '24px 16px 0'}}>
             <Route path="/manager/user" component={Muser}/>
             <Route path="/manager/bank" component={Mbank}/>
             <Route path="/manager/channel" component={Mchannel}/>

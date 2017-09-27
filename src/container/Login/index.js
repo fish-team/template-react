@@ -15,7 +15,7 @@ class Login extends Component {
         this.props.form.validateFields((err,values) => {
             if(!err) {
                 if(values.userName=== 'youyu' && values.passWord === '9188') {
-                    history.push('/manager')
+                    history.push('/manager/user')
                 } else {
                     message.info('用户名或密码错误')
                     return
