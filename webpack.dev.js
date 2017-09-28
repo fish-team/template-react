@@ -5,10 +5,17 @@ module.exports = {
     devServer: {
         contentBase: path.resolve(__dirname, 'src'),
         publicPath: '/',
-        host: '0.0.0.0',
         hot: true,
         open: true,
-        port: 3333
+        port: 3333,
+        inline: true,
+        quiet: false,
+        proxy: {
+            '/uncontrol/*': {
+                target: 'http://zj.pc.gs.youyuwo.com',
+                secure: false
+            }
+        }
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

@@ -11,7 +11,6 @@ const formItemLayout = {
     wrapperCol: { span: 18 }
   };
 // antd 
-const confirm = Modal.confirm
 const FormItem = Form.Item
 const Option = Select.Option
 // table State
@@ -171,6 +170,7 @@ class User extends Component {
             Mvisible: false
         })
     }
+    // 设置表单的值
     setFieldsValue = ({username = '',password = '',business= ''}) => {
         this.props.form.setFieldsValue({
             username,

@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Form,Button,Input,Icon,message} from 'antd'
 import createHistory from 'history/createHashHistory'
+
+import {login} from '../../mock'
 import './login.scss'
 
 
@@ -14,12 +16,19 @@ class Login extends Component {
         e.preventDefault()
         this.props.form.validateFields((err,values) => {
             if(!err) {
-                if(values.userName=== 'youyu' && values.passWord === '9188') {
-                    history.push('/manager/user')
-                } else {
-                    message.info('用户名或密码错误')
-                    return
-                }
+                login({
+                    username: values.userName,
+                    password: values.passWord
+                }).then((res) => {
+                    const data = res.data
+                    const {code} = data
+                    const Msg = data.message
+                    if(code === 1) {
+                        history.push(`/manager/user`)
+                    }
+                    message.info(Msg)
+                }) 
+                
             }
         })
     }

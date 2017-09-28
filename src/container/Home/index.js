@@ -5,6 +5,7 @@ import Nav from '../../component/Nav'
 import Header from '../../component/Header'
 import Content from './Content'
 import createHistory from 'history/createHashHistory'
+import Url from 'url'
 
 import menuItems from '../../util/menu'
 
