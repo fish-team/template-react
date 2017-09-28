@@ -7,8 +7,9 @@ import Content from './Content'
 import createHistory from 'history/createHashHistory'
 import Url from 'url'
 
-import menuItems from '../../util/menu'
-
+import menuItemsArr from '../../util/menu'
+const role = sessionStorage.getItem('role')
+const menuItems = menuItemsArr[role]
 const history = createHistory()
 let selKey = ['']
 
@@ -17,11 +18,12 @@ class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            user: '明海',
+            username: sessionStorage.getItem('username') || '有鱼',
             userIcon: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png'
         }
     }
     componentWillMount() {
+        // menuItems[role]
         this.getHash()
     }
     componentWillUpdate() {
@@ -50,7 +52,7 @@ class Home extends Component {
                     trigger = {null}
                     className="sider"
                 >
-                    <div className="sider-user">{`欢迎您，${this.state.user}`}</div>
+                    <div className="sider-user">{`欢迎您，${this.state.username}`}</div>
                     <Nav selKey= {selKey} menuItems = {menuItems} onClick={this.handleNavClick}/>
                 </Sider>
                 <Layout className="content-wrap">
@@ -62,5 +64,4 @@ class Home extends Component {
         )
     }
 }
-
 export default Home

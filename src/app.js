@@ -6,14 +6,14 @@ import { Provider } from 'react-redux'
 import routes from './router/routerMaps'
 import './asset/scss/normalize.scss'
 import './asset/scss/common.scss'
-// import store from './redux/store/store'
+import store from './redux/store/store'
 
 // store
 if(process.env.NODE_ENV === 'dev') {
   window.Perf = Perf;
 }
 render((
-   <div>
+   <Provider store={store}>
      {routes}
-   </div>
+   </Provider>
 ), document.getElementById('root'))

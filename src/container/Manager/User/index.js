@@ -3,7 +3,6 @@ import {Button,Modal,Form,Input,Select,Popconfirm} from 'antd'
 import Tables from '../../../component/Tables'
 import './user.scss'
 
-
 // handle
 
 const formItemLayout = {
@@ -13,6 +12,8 @@ const formItemLayout = {
 // antd 
 const FormItem = Form.Item
 const Option = Select.Option
+
+
 // table State
 const title = ()=> '用户（商务）管理'
 class User extends Component {

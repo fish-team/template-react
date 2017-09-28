@@ -1,13 +1,15 @@
-import { SHOW_TEXT } from '../actions/actionTypes'
+import { GET_USERNAME } from '../actions/actionsTypes'
 
 const inintailState = {
-    text: 'this is reducer'
+    username: ''
 }
 
-export function showText(state = inintailState, action) {
+export function getUser(state = inintailState, action) {
     switch (action.type) {
-        case SHOW_TEXT:
-            return 1111
+        case GET_USERNAME:
+            return {
+                username: action.username
+            }
         default:
             return state
     }

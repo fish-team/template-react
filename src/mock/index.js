@@ -9,3 +9,8 @@ export function login(data) {
         data: querystring.stringify(data)
     })
 }
+export function getUserLists(data) {
+    return axios({
+
+    })
+}

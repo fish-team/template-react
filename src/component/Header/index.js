@@ -2,7 +2,7 @@ import React from 'react'
 import {Layout,Avatar} from 'antd'
 
 const {Header} = Layout
-export default function({userIcon,onClick}) {
+export default function ({userIcon,onClick}) {
     return(
         <Header style={{ backgroundColor: '#fff' }}>
             <div onClick={onClick}>

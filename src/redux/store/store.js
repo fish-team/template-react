@@ -1,6 +1,6 @@
 import { createStore } from "redux"
-import { showText } from "../reducers/reducers"
+import { getUser } from "../reducers/reducers"
 
-let store = createStore(showText);
+let store = createStore(getUser);
 
 export default store

@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import {Form,Button,Input,Icon,message} from 'antd'
 import createHistory from 'history/createHashHistory'
-
 import {login} from '../../mock'
 import './login.scss'
 
+import {getUser} from '../../redux/actions/actions'
 
 const history = createHistory();
 const FormItem = Form.Item;
@@ -12,6 +12,9 @@ function hasErrors(fieldsError) {
     return Object.keys(fieldsError).some(field => fieldsError[field]);
   }
 class Login extends Component {
+    constructor(props) {
+        super(props)
+    }
     handleSubmit = (e)=> {
         e.preventDefault()
         this.props.form.validateFields((err,values) => {
@@ -22,8 +25,13 @@ class Login extends Component {
                 }).then((res) => {
                     const data = res.data
                     const {code} = data
+                    const {username,authMenu,role} = data.data
                     const Msg = data.message
+                    console.log(data)
                     if(code === 1) {
+                        sessionStorage.setItem('username',username)
+                        sessionStorage.setItem('role',role)
+                        sessionStorage.setItem('authMenu',JSON.stringify(authMenu))
                         history.push(`/manager/user`)
                     }
                     message.info(Msg)
@@ -86,6 +94,5 @@ class Login extends Component {
         )
     }
 }
-
 
 export default Form.create()(Login)
