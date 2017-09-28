@@ -5,9 +5,10 @@ import Nav from '../../component/Nav'
 import Header from '../../component/Header'
 import Content from './Content'
 import createHistory from 'history/createHashHistory'
-import Url from 'url'
 
 import menuItemsArr from '../../util/menu'
+
+// 根据权限展示不同的菜单
 const role = sessionStorage.getItem('role')
 const menuItems = menuItemsArr[role]
 const history = createHistory()
@@ -23,7 +24,6 @@ class Home extends Component {
         }
     }
     componentWillMount() {
-        // menuItems[role]
         this.getHash()
     }
     componentWillUpdate() {

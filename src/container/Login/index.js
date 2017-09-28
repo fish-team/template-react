@@ -27,11 +27,9 @@ class Login extends Component {
                     const {code} = data
                     const {username,authMenu,role} = data.data
                     const Msg = data.message
-                    console.log(data)
                     if(code === 1) {
                         sessionStorage.setItem('username',username)
                         sessionStorage.setItem('role',role)
-                        sessionStorage.setItem('authMenu',JSON.stringify(authMenu))
                         history.push(`/manager/user`)
                     }
                     message.info(Msg)
